@@ -27,5 +27,4 @@ jobs:
 #        run: npm -v
       - name: 安装依赖
         run: |
-          npm install
-          npm build
+          ls -al
