@@ -26,8 +26,11 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: 显示node版本
-        run: node -v
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.x'
 
       - name: 安装依赖
         run: npm install
@@ -47,4 +50,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: vue-build
-          path: ~/release/dist  # 替换为您编译后的文件所在的路径
+          path: ~/release  # 替换为您编译后的文件所在的路径
