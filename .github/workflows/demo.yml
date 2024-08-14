@@ -14,12 +14,9 @@ jobs:
 #    steps:
 #      - name: print npm version
 #        run: npm -v
-  run3:
-    name: 打包
+  build:
+    name: build action
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,6 +35,10 @@ jobs:
       - name: 编译
         run: npm run build
 
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
