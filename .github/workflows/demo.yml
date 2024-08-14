@@ -17,6 +17,9 @@ jobs:
   build:
     name: build action
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,6 +41,9 @@ jobs:
   release:
     name: release
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
     steps:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
