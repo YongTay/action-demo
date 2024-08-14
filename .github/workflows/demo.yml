@@ -21,29 +21,25 @@ jobs:
       run:
         working-directory: ./
     steps:
-#      - name: 显示node版本
-#        run: node -v
-#      - name: 显示npm版本
-#        run: npm -v
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.x'
+
       - name: 安装依赖
         run: npm install
 
-      - name: build
+      - name: 编译
         run: npm run build
-#      - name: 安装依赖
-#        run: |
-#          git clone https://github.com/YongTay/action-demo.git
-#          cd action-demo
-#          npm install
-#          npm run build
-#          ls
-  release:
-    needs: [run3 ]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: vue-build
+          path: dist/  # 替换为您编译后的文件所在的路径
