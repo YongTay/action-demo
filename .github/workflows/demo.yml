@@ -27,4 +27,10 @@ jobs:
 #        run: npm -v
       - name: 安装依赖
         run: |
-          ls -al
+          git clone https://github.com/YongTay/action-demo.git
+          ls
+          pwd
+          cd action-demo
+          ls
+          npm install
+          npm build
