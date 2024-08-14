@@ -23,9 +23,8 @@ jobs:
       - name: 显示npm版本
         run: npm -v
       - name: 拉取代码
-        run: git clone https://github.com/YongTay/action-demo.git
-
-      - name: 安装依赖
-        run: npm install
-      - name: 打包
-        run: npm run build
+        run:
+          git clone https://github.com/YongTay/action-demo.git
+          cd action-demo
+          npm install
+          npm run build
