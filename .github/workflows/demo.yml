@@ -17,11 +17,15 @@ jobs:
   run3:
     name: 打包
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
     steps:
       - name: 显示node版本
         run: node -v
       - name: 显示npm版本
         run: npm -v
       - name: 拉取代码
-        run: ./build.sh
+        run: |
+          ./build.sh
 
