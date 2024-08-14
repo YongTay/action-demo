@@ -1,0 +1,9 @@
+name: Github Action Demo
+on: push
+jobs:
+  run1:
+    name: show version
+    runs-on: ubuntu-latest
+    steps:
+      - name: print node version
+        run: node -v
