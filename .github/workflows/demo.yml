@@ -21,10 +21,11 @@ jobs:
       run:
         working-directory: ./
     steps:
-      - name: 显示node版本
-        run: node -v
-      - name: 显示npm版本
-        run: npm -v
-      - name: 拉取代码
-        uses: YongTay/action-demo@014f26f8873fe935cf27b444ba7206a21ed562e9
-
+#      - name: 显示node版本
+#        run: node -v
+#      - name: 显示npm版本
+#        run: npm -v
+      - name: 安装依赖
+        run: |
+          npm install
+          npm build
