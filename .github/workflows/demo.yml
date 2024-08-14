@@ -25,10 +25,20 @@ jobs:
 #        run: node -v
 #      - name: 显示npm版本
 #        run: npm -v
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
       - name: 安装依赖
-        run: |
-          git clone https://github.com/YongTay/action-demo.git
-          cd action-demo
-          npm install
-          npm run build
-          ls
+        run: npm install
+
+      - name: build
+        run: npm run build
+#      - name: 安装依赖
+#        run: |
+#          git clone https://github.com/YongTay/action-demo.git
+#          cd action-demo
+#          npm install
+#          npm run build
+#          ls
