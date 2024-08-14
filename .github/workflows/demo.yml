@@ -26,6 +26,5 @@ jobs:
       - name: 显示npm版本
         run: npm -v
       - name: 拉取代码
-        run: |
-          ./build.sh
+        uses: YongTay/action-demo@014f26f
 
